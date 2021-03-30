@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.Agency;
-import com.example.demo.repository.AgencyRepository;
+import com.application.pidev.Entity.Agency.*;
+import com.application.pidev.Repository.Agency.*;
 
 @Service
 public class AgencyServiceImpl implements AgencyService{
