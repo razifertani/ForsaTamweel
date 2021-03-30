@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Agency;
-import com.example.demo.service.AgencyService;
+import com.application.pidev.Entity.Agency.*;
+import com.application.pidev.Service.Agency.*;
 
 @RestController
 @EnableAutoConfiguration
