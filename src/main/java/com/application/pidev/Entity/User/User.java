@@ -16,6 +16,7 @@ package com.application.pidev.Entity.User;
 import com.application.pidev.Entity.User.audit.DateAudit;
 import com.application.pidev.UserSettings.validation.annotation.NullOrNotBlank;
 import org.hibernate.annotations.NaturalId;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -50,6 +51,11 @@ public class User extends DateAudit {
     @Column(name = "USERNAME", unique = true)
     @NullOrNotBlank(message = "Username can not be blank")
     private String username;
+
+    @Column(name = "identifier", unique = true)
+    @NullOrNotBlank(message = "Identifier can not be blank")
+    @Length(min = 8, max = 8)
+    private String identifier;
 
     @Column(name = "PASSWORD")
     @NotNull(message = "Password cannot be null")
@@ -120,6 +126,15 @@ public class User extends DateAudit {
     public String getUsername() {
         return username;
     }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
 
     public void setUsername(String username) {
         this.username = username;

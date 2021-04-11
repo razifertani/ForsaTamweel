@@ -22,6 +22,7 @@ import com.application.pidev.Entity.User.UserDevice;
 import com.application.pidev.Entity.User.payload.LogOutRequest;
 import com.application.pidev.Entity.User.payload.RegistrationRequest;
 import com.application.pidev.Repository.User.UserRepository;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -105,6 +106,7 @@ public class UserService {
         newUser.addRoles(getRolesForNewUser(isNewUserAsAdmin));
         newUser.setActive(true);
         newUser.setEmailVerified(false);
+        newUser.setIdentifier(RandomStringUtils.randomNumeric(8));
         return newUser;
     }
 
