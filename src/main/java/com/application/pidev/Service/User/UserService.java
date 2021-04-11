@@ -66,6 +66,14 @@ public class UserService {
     }
 
     /**
+     * Finds a user in the database by identifier
+     */
+    public Optional<User> findByIdentifier(String identifier) {
+        return userRepository.findByIdentifier(identifier);
+    }
+
+
+    /**
      * Find a user in db by id.
      */
     public Optional<User> findById(Long Id) {
